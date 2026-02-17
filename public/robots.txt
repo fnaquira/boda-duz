@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boda-duzcelly-alvaro.vercel.app/sitemap.xml
