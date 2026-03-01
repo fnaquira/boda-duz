@@ -10,40 +10,49 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta de la boda
-        cream: "#F5F5DC",
-        gold: "#D4AF37",
-        "gold-light": "#E8D189",
-        "dark-elegant": "#2C3E50",
-        "pink-pale": "#FADADD",
-        background: "#FFFFFF",
-        foreground: "#2C3E50",
+        // Paleta de la boda - PDF Floral Orgánico Beige
+        "beige-warm": "#EDE6DD",
+        "gold-soft": "#B08A57",
+        "brown-warm": "#6E5A3C",
+        "beige-light": "#F5F0E8",
+        "white-warm": "#FAF8F5",
+        
+        // Colores existentes actualizados
+        cream: "#EDE6DD",
+        gold: "#B08A57",
+        "gold-light": "#C9A570",
+        "dark-elegant": "#6E5A3C",
+        "pink-pale": "#F5F0E8",
+        background: "#EDE6DD",
+        foreground: "#6E5A3C",
         primary: {
-          DEFAULT: "#D4AF37",
-          foreground: "#FFFFFF",
+          DEFAULT: "#B08A57",
+          foreground: "#FAF8F5",
         },
         secondary: {
-          DEFAULT: "#F5F5DC",
-          foreground: "#2C3E50",
+          DEFAULT: "#F5F0E8",
+          foreground: "#6E5A3C",
         },
         muted: {
-          DEFAULT: "#F5F5DC",
-          foreground: "#6B7280",
+          DEFAULT: "#F5F0E8",
+          foreground: "#8B7355",
         },
         accent: {
-          DEFAULT: "#FADADD",
-          foreground: "#2C3E50",
+          DEFAULT: "#C9A570",
+          foreground: "#6E5A3C",
         },
         destructive: {
-          DEFAULT: "#EF4444",
-          foreground: "#FFFFFF",
+          DEFAULT: "#B85C5C",
+          foreground: "#FAF8F5",
         },
-        border: "#E5E7EB",
-        input: "#E5E7EB",
-        ring: "#D4AF37",
+        border: "#D4C4B0",
+        input: "#D4C4B0",
+        ring: "#B08A57",
       },
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
+        // Tipografía PDF - Script elegante + mayúsculas con tracking
+        script: ["Playfair Display", "Allura", "cursive"],
+        serif: ["Cormorant Garamond", "Cinzel", "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       keyframes: {

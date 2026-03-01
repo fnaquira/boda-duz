@@ -1,41 +1,50 @@
 import { Hero } from "@/components/Hero";
-import { OurStory } from "@/components/OurStory";
-import { WeddingDetails } from "@/components/WeddingDetails";
-import { RSVPForm } from "@/components/RSVPForm";
-import { FAQ } from "@/components/FAQ";
+import { Ceremony } from "@/components/Ceremony";
+import { Reception } from "@/components/Reception";
+import { DressCode } from "@/components/DressCode";
 import { Gallery } from "@/components/Gallery";
 import { Gifts } from "@/components/Gifts";
-import { Footer, WhatsAppFloatingButton } from "@/components/Footer";
+import { AdultsOnly } from "@/components/AdultsOnly";
+import { Confirmation } from "@/components/Confirmation";
+import { Countdown } from "@/components/Countdown";
+import { Footer } from "@/components/Footer";
+import { MusicPlayer } from "@/components/MusicPlayer";
 
 export default function Home() {
   return (
     <>
-      {/* Hero - Sección principal con countdown */}
+      {/* Música de fondo */}
+      <MusicPlayer />
+      
+      {/* 🕊 Hero - Ilustración lineal superior, nombres, fecha */}
       <Hero />
 
-      {/* Nuestra Historia - Timeline de la relación */}
-      <OurStory />
+      {/* ⛪ Ceremonia - Iglesia, 14:00, padres */}
+      <Ceremony />
 
-      {/* Detalles del Día - Ceremonia, cóctel, fiesta */}
-      <WeddingDetails />
+      {/* 🥂 Recepción - 15:00, Kusisqa Eventos */}
+      <Reception />
 
-      {/* RSVP - Formulario de confirmación */}
-      <RSVPForm />
+      {/* 👗 Código de Vestimenta - Texto exacto PDF */}
+      <DressCode />
 
-      {/* Preguntas Frecuentes */}
-      <FAQ />
-
-      {/* Galería de Fotos */}
+      {/* 📷 Galería - Botón "Compartir fotografías" */}
       <Gallery />
 
-      {/* Mesa de Regalos */}
+      {/* 🎁 Regalos - Texto sobre luna de miel */}
       <Gifts />
+
+      {/* 🧒 Nota adultos - Celebración solo para adultos */}
+      <AdultsOnly />
+
+      {/* ✅ Confirmación - Botón principal */}
+      <Confirmation />
+
+      {/* ⏰ Cuenta Regresiva - "Nos vemos" */}
+      <Countdown />
 
       {/* Footer */}
       <Footer />
-
-      {/* Botón flotante de WhatsApp */}
-      <WhatsAppFloatingButton />
     </>
   );
 }

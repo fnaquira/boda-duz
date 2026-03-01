@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { Music, Music2, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useMusicContext } from "@/components/MusicProvider";
 import { scrollToSection } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,7 +15,6 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const { isPlaying, toggleMusic } = useMusicContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -86,26 +84,6 @@ export function Navbar() {
 
             {/* Controles */}
             <div className="flex items-center gap-2">
-              {/* Botón de música */}
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleMusic}
-                className={`relative ${
-                  isScrolled ? "text-gray-700" : "text-gray-700"
-                } hover:text-amber-600 hover:bg-amber-50`}
-                aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
-              >
-                {isPlaying ? (
-                  <Music className="w-5 h-5" />
-                ) : (
-                  <Music2 className="w-5 h-5" />
-                )}
-                {isPlaying && (
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-                )}
-              </Button>
-
               {/* Menú móvil */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Camera, ImagePlus } from "lucide-react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const placeholderImages = [
   {
@@ -27,7 +28,7 @@ export function Gallery() {
   return (
     <section
       id="galeria"
-      className="py-20 md:py-28 bg-gradient-to-b from-amber-50/30 to-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
         {/* Encabezado */}
@@ -38,23 +39,19 @@ export function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gray-800 mb-4">
-            Galería de Fotos
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brown-warm mb-4">
+            Galería
           </h2>
           <div className="decorative-line mb-6" />
-          <p className="text-gray-800/70 max-w-lg mx-auto flex items-center justify-center gap-2">
-            <Camera className="w-5 h-5 text-amber-500" />
-            Momentos especiales que queremos compartir
-          </p>
         </motion.div>
 
-        {/* Grid de fotos */}
+        {/* Galería de imágenes */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
           {placeholderImages.map((image, index) => (
             <motion.div
@@ -80,20 +77,22 @@ export function Gallery() {
           ))}
         </motion.div>
 
-        {/* Mensaje para fotos futuras */}
+        {/* Botón "Compartir fotografías" */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 text-center"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center"
         >
-          <div className="inline-flex items-center gap-3 bg-amber-50 border border-amber-300 rounded-full px-6 py-3">
-            <ImagePlus className="w-5 h-5 text-amber-500" />
-            <span className="text-gray-800/80 text-sm sm:text-base">
-              ¡Pronto aquí fotos del día especial! Podrás subir las tuyas también.
-            </span>
-          </div>
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-beige-light border-2 border-gold-soft text-brown-warm hover:bg-gold-soft hover:text-white-warm text-lg px-10 py-4 rounded-full transition-all duration-300"
+          >
+            <ImagePlus className="w-5 h-5 mr-2" />
+            Compartir fotografías
+          </Button>
         </motion.div>
       </div>
     </section>

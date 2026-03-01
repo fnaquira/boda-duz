@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Allura&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -101,9 +101,33 @@
     animation: shimmer 1.5s infinite;
   }
 
-  /* Línea decorativa */
+  /* Línea decorativa PDF */
   .decorative-line {
-    @apply w-24 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto;
+    @apply w-24 h-px bg-gradient-to-r from-transparent via-gold-soft to-transparent mx-auto;
+  }
+
+  /* Estilo para mayúsculas con tracking amplio */
+  .uppercase-tracking {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  /* Gradiente de fondo PDF */
+  .bg-elegant-gradient {
+    background: linear-gradient(
+      135deg,
+      #EDE6DD 0%,
+      #FAF8F5 50%,
+      #F5F0E8 100%
+    );
+  }
+
+  /* Texto con efecto dorado PDF */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #B08A57 0%, #C9A570 50%, #B08A57 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Parallax sutil */
@@ -148,26 +172,26 @@
   transform: rotate(180deg);
 }
 
-/* Scrollbar elegante */
+/* Scrollbar elegante PDF */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F5DC;
+  background: #EDE6DD;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: #B08A57;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8963A;
+  background: #9B7849;
 }
 
-/* Selección de texto */
+/* Selección de texto PDF */
 ::selection {
-  background: #FADADD;
-  color: #2C3E50;
+  background: #F5F0E8;
+  color: #6E5A3C;
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/Navbar";
-import { MusicProvider } from "@/components/MusicProvider";
 
 export const metadata: Metadata = {
   title: "Boda de Duzcelly & Álvaro | 30 mayo 2026",
@@ -57,11 +56,9 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className="min-h-screen bg-white">
-        <MusicProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Toaster />
-        </MusicProvider>
+        <Navbar />
+        <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

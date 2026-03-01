@@ -35,11 +35,11 @@ export function Gifts() {
   return (
     <section
       id="regalos"
-      className="py-20 md:py-28 bg-white relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
     >
       {/* Decoración */}
-      <div className="absolute top-10 left-10 w-24 h-24 border-2 border-amber-200 rounded-full" />
-      <div className="absolute bottom-10 right-10 w-32 h-32 border border-rose-200 rounded-full" />
+      <div className="absolute top-10 left-10 w-24 h-24 border-2 border-gold-soft/20 rounded-full" />
+      <div className="absolute bottom-10 right-10 w-32 h-32 border border-gold-soft/10 rounded-full" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
         {/* Encabezado */}
@@ -48,110 +48,53 @@ export function Gifts() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gray-800 mb-4">
-            Mesa de Regalos
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brown-warm mb-4">
+            Regalos
           </h2>
           <div className="decorative-line mb-6" />
         </motion.div>
 
-        {/* Mensaje principal */}
+        {/* Contenido principal */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mb-12"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 mb-6">
-            <Plane className="w-8 h-8 text-amber-500" />
+          {/* Icono */}
+          <div className="flex justify-center mb-8">
+            <div className="w-16 h-16 rounded-full bg-gold-soft/10 flex items-center justify-center">
+              <Gift className="w-8 h-8 text-gold-soft" />
+            </div>
           </div>
-          <p className="text-gray-800/80 max-w-2xl mx-auto text-lg leading-relaxed">
-            Tu presencia es nuestro mejor regalo. Sin embargo, si deseas
-            contribuir a nuestra <strong className="text-amber-500">luna de miel</strong>, 
-            cualquier aporte será muy apreciado y nos ayudará a crear recuerdos
-            inolvidables juntos.
+
+          {/* Texto exacto del PDF */}
+          <p className="text-brown-warm/80 text-lg leading-relaxed font-serif italic mb-8">
+            Tu presencia es nuestro mejor regalo. Sin embargo, si deseas contribuir para nuestra luna de miel cualquier aporte será muy apreciado.
           </p>
-        </motion.div>
 
-        {/* Tarjetas de datos bancarios */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {bankDetails.map((bank, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
+          {/* Opción de transferencia */}
+          <div className="bg-white-warm border border-gold-soft/20 rounded-2xl p-8 max-w-md mx-auto">
+            <h3 className="font-serif text-xl text-brown-warm mb-4">
+              Luna de Miel
+            </h3>
+            <p className="text-brown-warm/70 text-sm mb-6">
+              Si deseas colaborar con nuestro viaje, puedes hacerlo mediante transferencia
+            </p>
+            
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full border-gold-soft text-gold-soft hover:bg-gold-soft hover:text-white-warm transition-all duration-300"
             >
-              <Card className="h-full hover:shadow-xl transition-shadow duration-300">
-                <CardHeader className="pb-2">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <CreditCard className="w-5 h-5 text-amber-500" />
-                    {bank.bank}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <p className="text-xs text-gray-800/50 uppercase tracking-wide">
-                      Tipo de cuenta
-                    </p>
-                    <p className="text-gray-800">{bank.accountType}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-800/50 uppercase tracking-wide">
-                      Número de cuenta
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <p className="text-gray-800 font-mono">
-                        {bank.accountNumber}
-                      </p>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-8 w-8"
-                        onClick={() => copyToClipboard(bank.accountNumber, index)}
-                      >
-                        {copiedIndex === index ? (
-                          <Check className="w-4 h-4 text-green-500" />
-                        ) : (
-                          <Copy className="w-4 h-4" />
-                        )}
-                      </Button>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-800/50 uppercase tracking-wide">
-                      CCI (para transferencias interbancarias)
-                    </p>
-                    <p className="text-gray-800 font-mono text-sm">
-                      {bank.cci}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-800/50 uppercase tracking-wide">
-                      Titular
-                    </p>
-                    <p className="text-gray-800">{bank.holder}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Nota */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-gray-800/60 text-sm mt-10 flex items-center justify-center gap-2"
-        >
-          <Gift className="w-4 h-4 text-amber-500" />
-          Gracias por tu generosidad y cariño
-        </motion.p>
+              <CreditCard className="w-5 h-5 mr-2" />
+              Ver datos bancarios
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
