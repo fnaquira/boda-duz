@@ -41,14 +41,3 @@ export function getTimeRemaining(targetDate: Date) {
     isExpired: false,
   };
 }
-
-// URL de WhatsApp con mensaje pre-armado
-export function getWhatsAppShareUrl(url?: string): string {
-  // Si no se proporciona URL, usar la actual del navegador
-  const currentUrl = url || (typeof window !== "undefined" ? window.location.href : "https://boda-duzcelly-alvaro.vercel.app");
-  
-  const message = encodeURIComponent(
-    `¡Duzcelly y Álvaro se casan! 💒💍 Mira los detalles de nuestra boda: ${currentUrl}`
-  );
-  return `https://wa.me/?text=${message}`;
-}

@@ -7,13 +7,13 @@ export function Confirmation() {
   return (
     <section
       id="confirmacion"
-      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden z-20"
     >
       {/* Decoración */}
       <div className="absolute top-10 left-10 w-24 h-24 border-2 border-gold-soft/20 rounded-full" />
       <div className="absolute bottom-10 right-10 w-32 h-32 border border-gold-soft/10 rounded-full" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-20">
         {/* Encabezado */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
