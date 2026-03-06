@@ -28,8 +28,11 @@ Portal de invitación virtual para la boda de Duzcelly Náquira y Álvaro Cari.
 - **React Hook Form + Zod** para formularios
 - **Radix UI** para componentes accesibles
 - **Lucide React** para iconos
+- **Google Sheets API** para almacenar confirmaciones de asistencia
 
 ## 🚀 Instalación y Ejecución
+
+### 1. Instalar Dependencias
 
 ```bash
 # Clonar o navegar al proyecto
@@ -37,13 +40,35 @@ cd boda-duz
 
 # Instalar dependencias
 npm install
+```
 
-# Ejecutar en desarrollo
+### 2. Configurar Google Sheets (Requerido)
+
+Para que el formulario de confirmación funcione, necesitas configurar Google Sheets API:
+
+1. **Sigue la guía completa:** [`GOOGLE_SHEETS_SETUP.md`](./GOOGLE_SHEETS_SETUP.md)
+2. **Configura las variables de entorno:**
+
+```bash
+# Copia el archivo de ejemplo
+cp .env.example .env.local
+
+# Edita .env.local con tus credenciales de Google
+# (Sigue las instrucciones en GOOGLE_SHEETS_SETUP.md)
+```
+
+### 3. Ejecutar en Desarrollo
+
+```bash
 npm run dev
 
 # Abrir en el navegador
 # http://localhost:3000
 ```
+
+### 4. Verificar Configuración
+
+Visita http://localhost:3000/api/rsvp para verificar que Google Sheets está configurado correctamente.
 
 ## 📁 Estructura del Proyecto
 
@@ -52,7 +77,7 @@ boda-duz/
 ├── app/
 │   ├── api/
 │   │   └── rsvp/
-│   │       └── route.ts      # API dummy para RSVP
+│   │       └── route.ts      # API para RSVP con Google Sheets
 │   ├── globals.css           # Estilos globales
 │   ├── layout.tsx            # Layout con metadata y navbar
 │   └── page.tsx              # Página principal
@@ -64,6 +89,11 @@ boda-duz/
 │   │   ├── toast.tsx
 │   │   ├── toaster.tsx
 │   │   └── use-toast.ts
+│   ├── AdultsOnly.tsx        # Advertencia de evento solo adultos
+│   ├── AttendanceForm.tsx    # Formulario de confirmación
+│   ├── Ceremony.tsx          # Detalles de la ceremonia
+│   ├── Confirmation.tsx      # Sección de confirmación
+│   ├── DressCode.tsx         # Código de vestimenta
 │   ├── FAQ.tsx               # Preguntas frecuentes
 │   ├── Footer.tsx            # Footer y WhatsApp flotante
 │   ├── Gallery.tsx           # Galería de fotos
@@ -72,10 +102,15 @@ boda-duz/
 │   ├── MusicProvider.tsx     # Contexto de música
 │   ├── Navbar.tsx            # Navegación fija
 │   ├── OurStory.tsx          # Historia de la pareja
-│   ├── RSVPForm.tsx          # Formulario de confirmación
+│   ├── Reception.tsx         # Detalles de la recepción
 │   └── WeddingDetails.tsx    # Detalles del evento
 ├── lib/
+│   ├── google-sheets.ts      # Integración con Google Sheets API
 │   └── utils.ts              # Utilidades (cn, scroll, etc.)
+├── .env.example              # Ejemplo de variables de entorno
+├── .env.local                # Variables de entorno (no subir a Git)
+├── DEPLOY.md                 # Guía de despliegue (Docker y Vercel)
+├── GOOGLE_SHEETS_SETUP.md    # Guía de configuración de Google Sheets
 ├── package.json
 ├── tailwind.config.ts
 ├── tsconfig.json
@@ -120,25 +155,54 @@ colors: {
 
 ## 🌐 Despliegue
 
-### Vercel (recomendado)
+Para instrucciones detalladas de despliegue, consulta [`DEPLOY.md`](./DEPLOY.md).
+
+### Opción 1: Vercel (Recomendado)
+
+Vercel es la plataforma ideal para Next.js. Despliegue automático desde Git con HTTPS incluido.
 
 ```bash
+# Opción A: CLI
 npm install -g vercel
 vercel
+
+# Opción B: Dashboard web
+# 1. Ve a vercel.com
+# 2. Importa tu repositorio
+# 3. Configura las variables de entorno
+# 4. Deploy
 ```
 
-### Netlify
+**Importante:** Configura las variables de entorno en Vercel antes de desplegar. Ver [`DEPLOY.md`](./DEPLOY.md) para detalles.
+
+### Opción 2: Docker
+
+Para desplegar en tu propio servidor usando Docker:
 
 ```bash
-npm run build
-# Subir carpeta .next o configurar Netlify para Next.js
+docker compose up -d --build
 ```
+
+Ver [`DEPLOY.md`](./DEPLOY.md) para configuración completa con Nginx/Traefik.
 
 ## 📝 Notas
 
-- El formulario RSVP es **dummy** - no guarda datos realmente. Para producción, conectar a una base de datos (Supabase, MongoDB, etc.)
-- La música de fondo es un placeholder. Reemplazar con música romántica libre de derechos.
-- Las imágenes son placeholders de Unsplash. Subir fotos reales de la pareja.
+- ✅ El formulario RSVP está **totalmente funcional** y guarda las confirmaciones en Google Sheets automáticamente
+- 🔐 Las credenciales de Google se manejan de forma segura mediante variables de entorno
+- 🎵 La música de fondo es un placeholder. Reemplazar con música romántica libre de derechos
+- 📸 Las imágenes son placeholders de Unsplash. Subir fotos reales de la pareja
+- 🌐 El proyecto está listo para producción en Vercel o Docker
+
+## 📊 Datos de Confirmación
+
+Las confirmaciones se almacenan en Google Sheets con la siguiente información:
+- Fecha y hora de la confirmación
+- Nombre completo de cada adulto
+- Alergias/intolerancias alimentarias
+- Confirmación de asistencia (Sí/No)
+- Necesidad de servicio de autobús
+- Canción solicitada
+- Total de adultos en el grupo
 
 ## 💕 Créditos
 

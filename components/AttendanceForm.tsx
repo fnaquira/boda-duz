@@ -45,12 +45,52 @@ export function AttendanceForm() {
     setIsSubmitting(true);
 
     try {
-      // Simular envío del formulario
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      // Validar que se haya seleccionado si asistirá o no
+      if (!formData.willAttend) {
+        toast({
+          title: "Campo requerido",
+          description: "Por favor indica si asistirás o no.",
+          variant: "destructive",
+          duration: 5000,
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Validar nombres si asiste
+      if (formData.willAttend === "yes") {
+        const hasEmptyNames = formData.adults.some(adult => !adult.name.trim());
+        if (hasEmptyNames) {
+          toast({
+            title: "Campos incompletos",
+            description: "Por favor completa los nombres de todos los adultos.",
+            variant: "destructive",
+            duration: 5000,
+          });
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
+      // Enviar datos al endpoint
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Error al enviar la confirmación');
+      }
+
+      // Mostrar mensaje de éxito
       toast({
         title: "¡Confirmación enviada!",
-        description: "Gracias por confirmar tu asistencia. Nos vemos pronto.",
+        description: data.message || "Gracias por confirmar tu asistencia. Nos vemos pronto.",
         duration: 5000,
       });
 
@@ -63,10 +103,11 @@ export function AttendanceForm() {
         songRequest: "",
       });
       setIsOpen(false);
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Error al enviar confirmación:', error);
       toast({
         title: "Error",
-        description: "No se pudo enviar la confirmación. Intenta de nuevo.",
+        description: error.message || "No se pudo enviar la confirmación. Intenta de nuevo.",
         variant: "destructive",
         duration: 5000,
       });

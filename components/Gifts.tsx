@@ -35,11 +35,18 @@ export function Gifts() {
   return (
     <section
       id="regalos"
-      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
-      {/* Decoración */}
-      <div className="absolute top-10 left-10 w-24 h-24 border-2 border-gold-soft/20 rounded-full" />
-      <div className="absolute bottom-10 right-10 w-32 h-32 border border-gold-soft/10 rounded-full" />
+      {/* Fondo con imagen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
+        }}
+      />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/87" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
         {/* Encabezado */}
@@ -64,10 +71,14 @@ export function Gifts() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center max-w-3xl mx-auto"
         >
-          {/* Icono */}
+          {/* Imagen de regalos */}
           <div className="flex justify-center mb-8">
-            <div className="w-16 h-16 rounded-full bg-gold-soft/10 flex items-center justify-center">
-              <Gift className="w-8 h-8 text-gold-soft" />
+            <div className="w-56 h-56 md:w-64 md:h-64">
+              <img 
+                src="/img/regalos.png" 
+                alt="Regalos" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 

@@ -28,8 +28,18 @@ export function Gallery() {
   return (
     <section
       id="galeria"
-      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
+      {/* Fondo con imagen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
+        }}
+      />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/88" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
         {/* Encabezado */}
         <motion.div

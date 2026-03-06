@@ -7,11 +7,18 @@ export function AdultsOnly() {
   return (
     <section
       id="adultos-solo"
-      className="py-16 md:py-20 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
+      className="py-16 md:py-20 relative overflow-hidden"
     >
-      {/* Decoración sutil */}
-      <div className="absolute top-1/4 left-0 w-32 h-32 bg-gold-soft/5 rounded-full -translate-x-1/2" />
-      <div className="absolute top-1/2 right-0 w-40 h-40 bg-beige-warm/15 rounded-full translate-x-1/3" />
+      {/* Fondo con imagen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
+        }}
+      />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/89" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
         <motion.div
@@ -30,7 +37,7 @@ export function AdultsOnly() {
 
           {/* Título */}
           <h2 className="font-script text-3xl md:text-4xl text-brown-warm mb-6">
-            Celebración solo para adultos
+            Celebración sólo para adultos
           </h2>
 
           {/* Línea decorativa */}
@@ -38,7 +45,7 @@ export function AdultsOnly() {
 
           {/* Mensaje */}
           <p className="text-lg font-serif leading-relaxed text-brown-warm/80 mb-4">
-            Amamos a los pequeños, pero hemos decidido que esta sea una celebración solo para adultos.
+            Amamos a los pequeños, pero hemos decidido que esta sea una celebración sólo para adultos.
           </p>
           <p className="text-lg font-serif leading-relaxed text-brown-warm/70">
             Esperamos contar con su comprensión para que todos puedan disfrutar de la velada con tranquilidad.

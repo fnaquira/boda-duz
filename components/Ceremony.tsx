@@ -8,13 +8,20 @@ export function Ceremony() {
   return (
     <section
       id="ceremony"
-      className="py-16 md:py-20 bg-gradient-to-b from-white-warm to-beige-light relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden py-16"
     >
-      {/* Decoración floral sutil */}
-      <div className="absolute top-1/4 left-0 w-32 h-32 bg-gold-soft/5 rounded-full -translate-x-1/2" />
-      <div className="absolute top-1/3 right-0 w-48 h-48 bg-beige-warm/20 rounded-full translate-x-1/3" />
+      {/* Fondo con imagen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
+        }}
+      />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/85" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10 w-full">
         {/* Contenido principal simplificado */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,12 +30,25 @@ export function Ceremony() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* Icono */}
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-full bg-gold-soft/10 flex items-center justify-center">
-              <Church className="w-8 h-8 text-gold-soft" />
+
+          {/* Lugar con imagen */}
+          <div className="flex flex-col items-center gap-4 mb-2">
+            <div className="w-56 h-56 md:w-64 md:h-64 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src="/img/iglesia.jpeg" 
+                alt="Iglesia de Tiabaya" 
+                className="w-full h-full object-cover"
+              />
             </div>
+            <h3 className="font-serif text-2xl md:text-3xl text-brown-warm">
+              Iglesia de Tiabaya
+            </h3>
           </div>
+
+          {/* Bendición */}
+          <p className="text-brown-warm/80 text-lg mb-8 italic">
+            Con la bendición de Dios y nuestros padres
+          </p>
 
           {/* Hora */}
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -38,16 +58,6 @@ export function Ceremony() {
             </span>
           </div>
 
-          {/* Lugar */}
-          <h3 className="font-serif text-2xl md:text-3xl text-brown-warm mb-2">
-            Iglesia de Tiabaya
-          </h3>
-
-          {/* Bendición */}
-          <p className="text-brown-warm/80 text-lg mb-8 italic">
-            Con la bendición de Dios y nuestros padres
-          </p>
-
           {/* Padres - Columnas separadas */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 max-w-2xl mx-auto">
             {/* Padres del novio */}
@@ -55,7 +65,7 @@ export function Ceremony() {
               <h4 className="font-serif text-lg text-brown-warm mb-2">
                 Padres del Novio
               </h4>
-              <p className="text-brown-warm/70">
+              <p className="font-serif text-brown-warm/70">
                 Margarita Amanqui Condori<br />
                 Matías Edilberto Cari Flores
               </p>
@@ -66,7 +76,7 @@ export function Ceremony() {
               <h4 className="font-serif text-lg text-brown-warm mb-2">
                 Padres de la Novia
               </h4>
-              <p className="text-brown-warm/70">
+              <p className="font-serif text-brown-warm/70">
                 Aladina Manuela Vargas Manchego<br />
                 Juan Antonio Náquira Saavedra
               </p>

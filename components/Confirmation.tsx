@@ -7,11 +7,18 @@ export function Confirmation() {
   return (
     <section
       id="confirmacion"
-      className="py-20 md:py-28 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden z-20"
+      className="py-20 md:py-28 relative overflow-hidden z-20"
     >
-      {/* Decoración */}
-      <div className="absolute top-10 left-10 w-24 h-24 border-2 border-gold-soft/20 rounded-full" />
-      <div className="absolute bottom-10 right-10 w-32 h-32 border border-gold-soft/10 rounded-full" />
+      {/* Fondo con imagen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
+        }}
+      />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/86" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-20">
         {/* Encabezado */}
@@ -22,6 +29,17 @@ export function Confirmation() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* Imagen de invitación */}
+          <div className="flex justify-center mb-8">
+            <div className="w-56 h-56 md:w-64 md:h-64">
+              <img 
+                src="/img/invitacion.png" 
+                alt="Invitación" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brown-warm mb-4">
             Confirmación
           </h2>

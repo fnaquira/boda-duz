@@ -8,13 +8,20 @@ export function Reception() {
   return (
     <section
       id="reception"
-      className="py-16 md:py-20 bg-gradient-to-b from-beige-light to-white-warm relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden py-16"
     >
-      {/* Decoración sutil */}
-      <div className="absolute top-1/3 left-0 w-40 h-40 bg-gold-soft/5 rounded-full -translate-x-1/2" />
-      <div className="absolute top-1/4 right-0 w-32 h-32 bg-beige-warm/15 rounded-full translate-x-1/3" />
+      {/* Fondo con imagen */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
+        }}
+      />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/85" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10 w-full">
         {/* Contenido principal simplificado */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,10 +30,14 @@ export function Reception() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* Icono lineal minimal */}
+          {/* Imagen de paloma */}
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-full bg-gold-soft/10 flex items-center justify-center">
-              <PartyPopper className="w-8 h-8 text-gold-soft" />
+            <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden bg-white-warm shadow-md">
+              <img 
+                src="/img/paloma.jpeg" 
+                alt="Paloma" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 

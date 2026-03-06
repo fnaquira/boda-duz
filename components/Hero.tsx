@@ -42,27 +42,31 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Fondo con degradado elegante PDF */}
-      <div className="absolute inset-0 bg-gradient-to-br from-beige-warm via-white-warm to-beige-light" />
-      
-      {/* Patrón decorativo sutil */}
+      {/* Fondo con imagen */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23D4AF37\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')`,
+          backgroundImage: `url('/img/fondo-1.jpeg')`,
         }}
       />
+      
+      {/* Overlay para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white-warm/80" />
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        {/* Ilustración lineal superior */}
+        {/* Imagen de la pareja */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-12"
         >
-          <div className="w-16 h-16 mx-auto border-2 border-gold-soft rounded-full flex items-center justify-center">
-            <Heart className="w-8 h-8 text-gold-soft fill-gold-soft/10" />
+          <div className="w-80 h-80 md:w-96 md:h-96 mx-auto rounded-full overflow-hidden border-4 border-gold-soft/30 shadow-lg">
+            <img 
+              src="/img/pareja.jpeg" 
+              alt="Duzcelly y Álvaro" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 
@@ -71,10 +75,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-brown-warm mb-4"
+          className="font-script text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-brown-warm mb-4"
         >
           <span className="block">Duzcelly</span>
-          <span className="text-gold-soft text-3xl sm:text-4xl md:text-5xl">&</span>
+          <span className="text-gold-soft text-2xl sm:text-3xl md:text-4xl lg:text-5xl">&</span>
           <span className="block">Álvaro</span>
         </motion.h1>
 
