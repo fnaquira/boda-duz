@@ -1,6 +1,6 @@
-# 💒 Boda de Duzcelly & Álvaro
+# 💒 Boda de Duzcelly & Alvaro
 
-Portal de invitación virtual para la boda de Duzcelly Náquira y Álvaro Cari.
+Portal de invitación virtual para la boda de Duzcelly Náquira y Alvaro Cari.
 
 **Fecha:** Sábado 30 de mayo de 2026  
 **Lugar:** Tiabaya, Arequipa - Perú
@@ -122,7 +122,7 @@ boda-duz/
 ### Cambiar datos de la boda
 
 1. **Fecha y hora:** Editar `WEDDING_DATE` en `components/Hero.tsx`
-2. **Nombres:** Buscar y reemplazar "Duzcelly" y "Álvaro" en todos los archivos
+2. **Nombres:** Buscar y reemplazar "Duzcelly" y "Alvaro" en todos los archivos
 3. **Ubicaciones:** Editar `events` en `components/WeddingDetails.tsx`
 4. **Datos bancarios:** Editar `bankDetails` en `components/Gifts.tsx`
 5. **FAQ:** Editar `faqs` en `components/FAQ.tsx`
@@ -206,8 +206,8 @@ Las confirmaciones se almacenan en Google Sheets con la siguiente información:
 
 ## 💕 Créditos
 
-Hecho con amor para Duzcelly & Álvaro.
+Hecho con amor para Duzcelly & Alvaro.
 
 ---
 
-© 2026 Boda Duzcelly & Álvaro
+© 2026 Boda Duzcelly & Alvaro

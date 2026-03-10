@@ -131,7 +131,7 @@ export async function GET() {
     validateGoogleSheetsConfig();
     return NextResponse.json({
       status: "ok",
-      message: "API RSVP activa - Boda Duzcelly & Álvaro",
+      message: "API RSVP activa - Boda Duzcelly & Alvaro",
       googleSheetsConfigured: true,
       timestamp: new Date().toISOString(),
     });

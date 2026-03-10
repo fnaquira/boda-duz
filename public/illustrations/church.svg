@@ -1,0 +1,17 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Church illustration -->
+  <rect x="100" y="150" width="100" height="120" fill="#B5A08A" fill-opacity="0.8"/>
+  <polygon points="90,150 150,80 210,150" fill="#B5A08A" fill-opacity="0.8"/>
+  <rect x="140" y="100" width="20" height="50" fill="#B5A08A" fill-opacity="0.8"/>
+  <circle cx="150" cy="90" r="8" fill="#B5A08A" fill-opacity="0.6"/>
+  
+  <!-- Windows -->
+  <rect x="120" y="170" width="20" height="30" fill="#EAE6DA" fill-opacity="0.6"/>
+  <rect x="160" y="170" width="20" height="30" fill="#EAE6DA" fill-opacity="0.6"/>
+  
+  <!-- Door -->
+  <rect x="140" y="220" width="20" height="50" fill="#EAE6DA" fill-opacity="0.6"/>
+  
+  <!-- Dove -->
+  <path d="M150 60 Q160 50, 170 60 Q165 55, 160 58 Q155 55, 150 60" fill="#B5A08A" fill-opacity="0.4"/>
+</svg>

@@ -72,7 +72,7 @@ export function MusicPlayer() {
           >
             <div className="mb-8">
               <h1 className="font-script text-5xl md:text-6xl text-brown-warm mb-4">
-                Duzcelly & Álvaro
+                Duzcelly & Alvaro
               </h1>
               <p className="text-xl text-gold-soft font-serif italic">
                 30 Mayo 2026
@@ -102,9 +102,9 @@ export function MusicPlayer() {
         aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
       >
         {isPlaying ? (
-          <VolumeX className="w-5 h-5 text-brown-warm group-hover:text-white-warm" />
-        ) : (
           <Volume2 className="w-5 h-5 text-brown-warm group-hover:text-white-warm" />
+        ) : (
+          <VolumeX className="w-5 h-5 text-brown-warm group-hover:text-white-warm" />
         )}
       </motion.button>
     </>

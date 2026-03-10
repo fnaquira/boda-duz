@@ -1,4 +1,4 @@
-# 🚀 Guía de Despliegue - Boda Duzcelly & Álvaro
+# 🚀 Guía de Despliegue - Boda Duzcelly & Alvaro
 
 ## Requisitos del Servidor
 - Docker 20.10+
@@ -223,7 +223,7 @@ Deberías ver:
 ```json
 {
   "status": "ok",
-  "message": "API RSVP activa - Boda Duzcelly & Álvaro",
+  "message": "API RSVP activa - Boda Duzcelly & Alvaro",
   "googleSheetsConfigured": true,
   "timestamp": "2026-03-06T..."
 }

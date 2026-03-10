@@ -1,83 +1,54 @@
-"use client";
+import { Clock, MapPin } from 'lucide-react'
 
-import { motion } from "framer-motion";
-import { PartyPopper, MapPin, Clock, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-export function Reception() {
+export default function Reception() {
   return (
-    <section
-      id="reception"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden py-16"
-    >
-      {/* Fondo con imagen */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/img/fondo-1.jpeg')`,
-        }}
-      />
-      
-      {/* Overlay para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-white-warm/85" />
+    <section className="py-16 md:py-24 lg:py-32">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center">
+        {/* Left: Details */}
+        <div className="md:col-span-2 order-2 md:order-1">
+          <h3 className="font-serif uppercase tracking-[0.25em] text-lg md:text-2xl text-brown-text mb-10">
+            Recepción Social
+          </h3>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10 w-full">
-        {/* Contenido principal simplificado */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          {/* Imagen de paloma */}
-          <div className="flex justify-center mb-6">
-            <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden bg-white-warm shadow-md">
-              <img 
-                src="/img/paloma.jpeg" 
-                alt="Paloma" 
-                className="w-full h-full object-cover"
-              />
+          <div className="flex items-center justify-center gap-8 md:gap-12">
+            {/* Time */}
+            <div className="text-center">
+              <Clock size={36} className="mx-auto mb-3 text-brown-light" />
+              <span className="font-serif uppercase tracking-widest text-lg md:text-xl text-brown-text block">
+                15:00H
+              </span>
+            </div>
+
+            {/* Vertical separator */}
+            <div className="w-px h-20 bg-separator" />
+
+            {/* Location */}
+            <div className="text-center">
+              <MapPin size={36} className="mx-auto mb-3 text-brown-light" />
+              <span className="font-serif uppercase tracking-widest text-lg md:text-xl text-brown-text block">
+                Kusisqa Eventos
+              </span>
             </div>
           </div>
 
-          {/* Hora */}
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Clock className="w-5 h-5 text-gold-soft" />
-            <span className="text-xl font-semibold text-gold-soft">
-              15:00 h
-            </span>
-          </div>
-
-          {/* Lugar */}
-          <h3 className="font-serif text-2xl md:text-3xl text-brown-warm mb-6">
-            Kusisqa Eventos
-          </h3>
-
-          {/* Dirección simplificada */}
-          <p className="text-brown-warm/70 text-lg mb-8">
-            Av. Arancota 201, Tiabaya
-          </p>
-
-          {/* Botón de mapa */}
-          <Button
-            variant="outline"
-            size="lg"
-            asChild
-            className="group border-gold-soft text-gold-soft hover:bg-gold-soft hover:text-white-warm transition-all duration-300"
-          >
-            <a
-              href="https://maps.app.goo.gl/yZAU9UEFURoVjUyJA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MapPin className="w-5 h-5 mr-2" />
+          <div className="mt-8 text-center">
+            <a target="_blank" href="https://maps.app.goo.gl/yZAU9UEFURoVjUyJA" className="inline-block border border-brown-light text-brown-light hover:bg-brown-light hover:text-white-warm transition-colors duration-300 px-6 py-2 text-sm md:text-base font-serif uppercase tracking-widest">
               Ver ubicación
-              <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
-          </Button>
-        </motion.div>
+          </div>
+        </div>
+
+        {/* Right: Champagne illustration */}
+        <div className="md:col-span-3 order-1 md:order-2 flex justify-center">
+          <img
+            src="/img/copas.png"
+            alt="Recepción"
+            width={400}
+            height={400}
+            className="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain"
+          />
+        </div>
       </div>
     </section>
-  );
+  )
 }

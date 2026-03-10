@@ -10,19 +10,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta de la boda - PDF Floral Orgánico Beige
+        cream: "#F5F5DC",
+        gold: "#D4AF37",
+        "dark-elegant": "#2C3E50",
+        "pink-pale": "#FADADD",
+        // Add new tokens
+        "beige-bg": "#EAE6DA",
+        "beige-organic": "#D9D4C4",
+        "brown-text": "#8B7355",
+        "brown-light": "#A89070",
+        "separator": "#C4B49A",
+        "illustration": "#B5A08A",
+        
+        // Colores existentes actualizados
         "beige-warm": "#EDE6DD",
         "gold-soft": "#B08A57",
         "brown-warm": "#6E5A3C",
         "beige-light": "#F5F0E8",
         "white-warm": "#FAF8F5",
         
-        // Colores existentes actualizados
-        cream: "#EDE6DD",
-        gold: "#B08A57",
-        "gold-light": "#C9A570",
-        "dark-elegant": "#6E5A3C",
-        "pink-pale": "#F5F0E8",
         background: "#EDE6DD",
         foreground: "#6E5A3C",
         primary: {
@@ -50,10 +56,9 @@ const config: Config = {
         ring: "#B08A57",
       },
       fontFamily: {
-        // Tipografía PDF - Script elegante + mayúsculas con tracking
-        script: ["Playfair Display", "Allura", "cursive"],
-        serif: ["Cormorant Garamond", "Cinzel", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        script: ["'Great Vibes'", "cursive"],
+        serif: ["'Playfair Display'", "Georgia", "serif"],
+        body: ["'Cormorant Garamond'", "serif"],
       },
       keyframes: {
         "accordion-down": {

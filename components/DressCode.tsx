@@ -1,53 +1,31 @@
-"use client";
+import { SectionDivider } from './SectionDivider'
 
-import { motion } from "framer-motion";
-import { Shirt } from "lucide-react";
-
-export function DressCode() {
-  const dressCodeText = "Elegante formal. Para caballeros sugerimos traje y corbata. Para damas, vestido largo o de cóctel elegante. Los colores pasteles y tonos tierra son bienvenidos. Por favor evitar el color blanco, reservado para la novia.";
-
+export default function DressCode() {
   return (
-    <section
-      id="dress-code"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden py-16"
-    >
-      {/* Fondo con imagen */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/img/fondo-1.jpeg')`,
-        }}
-      />
-      
-      {/* Overlay para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-white-warm/90" />
+    <section className="py-16 md:py-24 lg:py-32">
+      <SectionDivider />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10 w-full">
-        {/* Contenido principal simplificado */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          {/* Imagen de vestimenta */}
-          <div className="flex justify-center mb-8">
-            <div className="w-56 h-56 md:w-64 md:h-64">
-              <img 
-                src="/img/vestimenta.png" 
-                alt="Código de vestimenta" 
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
+      <h2 className="font-serif uppercase tracking-[0.25em] text-center text-lg md:text-2xl text-brown-text mb-8">
+        Código de Vestimenta
+      </h2>
 
-          {/* Texto del código de vestimenta - Exactamente como el PDF */}
-          <p className="text-brown-warm/80 text-lg leading-relaxed font-serif italic">
-            {dressCodeText}
-          </p>
-        </motion.div>
+      {/* Elegant couple illustration */}
+      <div className="mb-8">
+        <img
+          src="/img/vestimenta.png"
+          alt="Vestimenta"
+          width={220}
+          height={220}
+          className="mx-auto w-40 h-40 md:w-56 md:h-56 object-contain"
+        />
       </div>
+
+      {/* Dress code text */}
+      <p className="font-serif uppercase tracking-wider text-center text-base md:text-lg leading-loose max-w-sm mx-auto text-brown-text mb-8">
+        Elegante formal. Para caballeros sugerimos traje y corbata. Para damas, vestido largo o de cóctel elegante. Los colores pasteles y tonos tierra son bienvenidos. Por favor evitar el color blanco, reservado para la novia.
+      </p>
+
+      <SectionDivider />
     </section>
-  );
+  )
 }

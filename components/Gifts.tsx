@@ -1,112 +1,134 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { Gift, Plane, CreditCard, Copy, Check } from "lucide-react";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from 'react'
+import { X, Copy, Check } from 'lucide-react'
+import { SectionDivider } from './SectionDivider'
 
-const bankDetails = [
+const BANK_ACCOUNTS = [
   {
-    bank: "BCP - Banco de Crédito del Perú",
-    accountType: "Cuenta de Ahorros Soles",
-    accountNumber: "XXX-XXXXXXX-X-XX",
-    cci: "002-XXX-XXXXXXXX-X-XX",
-    holder: "Duzcelly Náquira / Álvaro Cari",
+    bank: 'BCP',
+    account: '000-00000000-0-00',
+    cci: '000 000 000000000000 00',
+    holder: 'Nombre Titular',
   },
   {
-    bank: "Interbank",
-    accountType: "Cuenta de Ahorros Soles",
-    accountNumber: "XXX-XXXXXXX-XXX",
-    cci: "003-XXX-XXXXXXXX-XX",
-    holder: "Duzcelly Náquira / Álvaro Cari",
+    bank: 'Interbank',
+    account: '000-000000000-0',
+    cci: '003 000 000000000000 00',
+    holder: 'Nombre Titular',
   },
-];
+]
 
-export function Gifts() {
-  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
 
-  const copyToClipboard = (text: string, index: number) => {
-    navigator.clipboard.writeText(text);
-    setCopiedIndex(index);
-    setTimeout(() => setCopiedIndex(null), 2000);
-  };
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1500)
+  }
 
   return (
-    <section
-      id="regalos"
-      className="py-20 md:py-28 relative overflow-hidden"
-    >
-      {/* Fondo con imagen */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/img/fondo-1.jpeg')`,
-        }}
-      />
-      
-      {/* Overlay para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-white-warm/87" />
+    <button onClick={handleCopy} className="ml-2 text-brown-light hover:text-brown-text transition-colors">
+      {copied ? <Check size={14} /> : <Copy size={14} />}
+    </button>
+  )
+}
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
-        {/* Encabezado */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brown-warm mb-4">
-            Regalos
-          </h2>
-          <div className="decorative-line mb-6" />
-        </motion.div>
+export default function Gifts() {
+  const [open, setOpen] = useState(false)
 
-        {/* Contenido principal */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          {/* Imagen de regalos */}
-          <div className="flex justify-center mb-8">
-            <div className="w-56 h-56 md:w-64 md:h-64">
-              <img 
-                src="/img/regalos.png" 
-                alt="Regalos" 
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
+  return (
+    <section className="py-16 md:py-24 lg:py-32">
+      <SectionDivider />
 
-          {/* Texto exacto del PDF */}
-          <p className="text-brown-warm/80 text-lg leading-relaxed font-serif italic mb-8">
+      <h2 className="font-serif uppercase tracking-[0.25em] text-center text-sm text-brown-text mb-8">
+        Regalos
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start">
+        {/* Left: Gift illustration */}
+        <div className="md:col-span-2">
+          <img
+            src="/img/regalos.png"
+            alt="Regalo"
+            width={200}
+            height={200}
+            className="mx-auto w-32 h-32 md:w-full md:h-full"
+          />
+        </div>
+
+        {/* Right: Gift text */}
+        <div className="md:col-span-3">
+          <p className="font-serif uppercase tracking-wider text-sm leading-loose text-brown-text mb-6">
             Tu presencia es nuestro mejor regalo. Sin embargo, si deseas contribuir para nuestra luna de miel cualquier aporte será muy apreciado.
           </p>
 
-          {/* Opción de transferencia */}
-          <div className="bg-white-warm border border-gold-soft/20 rounded-2xl p-8 max-w-md mx-auto">
-            <h3 className="font-serif text-xl text-brown-warm mb-4">
-              Luna de Miel
-            </h3>
-            <p className="text-brown-warm/70 text-sm mb-6">
-              Si deseas colaborar con nuestro viaje, puedes hacerlo mediante transferencia
-            </p>
-            
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full border-gold-soft text-gold-soft hover:bg-gold-soft hover:text-white-warm transition-all duration-300"
-            >
-              <CreditCard className="w-5 h-5 mr-2" />
-              Ver datos bancarios
-            </Button>
-          </div>
-        </motion.div>
+          <h3 className="font-serif uppercase tracking-[0.2em] text-xs text-brown-light mb-4">
+            Luna de Miel
+          </h3>
+
+          <p className="font-body text-sm text-brown-light mb-6">
+            Si deseas colaborar con nuestro viaje, puedes hacerlo mediante transferencia
+          </p>
+
+          <button
+            onClick={() => setOpen(true)}
+            className="px-6 py-2 rounded-full border border-separator text-brown-text font-serif uppercase tracking-widest text-xs hover:bg-beige-organic transition"
+          >
+            Ver Datos Bancarios
+          </button>
+        </div>
       </div>
+
+      <SectionDivider />
+
+      {/* Modal */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-brown-text/30 backdrop-blur-sm px-4"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="bg-beige-light rounded-sm w-full max-w-sm p-8 relative shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-4 right-4 text-brown-light hover:text-brown-text transition-colors"
+            >
+              <X size={18} />
+            </button>
+
+            <h3 className="font-serif uppercase tracking-[0.25em] text-base text-brown-text text-center mb-6">
+              Datos Bancarios
+            </h3>
+
+            <div className="space-y-6">
+              {BANK_ACCOUNTS.map((acc) => (
+                <div key={acc.bank} className="border-t border-separator pt-5 first:border-0 first:pt-0">
+                  <p className="font-serif uppercase tracking-widest text-xs text-brown-light mb-3">{acc.bank}</p>
+                  <div className="space-y-2 text-sm font-body text-brown-text">
+                    <div className="flex items-center justify-between">
+                      <span className="text-brown-light text-xs uppercase tracking-wider">Titular</span>
+                      <span className="flex items-center">{acc.holder} <CopyButton text={acc.holder} /></span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-brown-light text-xs uppercase tracking-wider">Cuenta</span>
+                      <span className="flex items-center">{acc.account} <CopyButton text={acc.account} /></span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-brown-light text-xs uppercase tracking-wider">CCI</span>
+                      <span className="flex items-center">{acc.cci} <CopyButton text={acc.cci} /></span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
-  );
+  )
 }

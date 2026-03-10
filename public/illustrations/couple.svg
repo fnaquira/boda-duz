@@ -1,0 +1,11 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Couple silhouette illustration -->
+  <circle cx="100" cy="120" r="25" fill="#B5A08A" fill-opacity="0.8"/>
+  <path d="M75 145 Q100 160, 125 145 L130 200 L95 210 L70 200 Z" fill="#B5A08A" fill-opacity="0.8"/>
+  
+  <circle cx="200" cy="120" r="25" fill="#B5A08A" fill-opacity="0.8"/>
+  <path d="M175 145 Q200 130, 225 145 L230 200 L205 210 L180 200 Z" fill="#B5A08A" fill-opacity="0.8"/>
+  
+  <!-- Hearts -->
+  <path d="M150 140 C150 130, 160 130, 160 140 C160 130, 170 130, 170 140 Q160 155, 150 140 Z" fill="#B5A08A" fill-opacity="0.6"/>
+</svg>

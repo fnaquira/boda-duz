@@ -71,7 +71,7 @@ export function OurStory() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=1000&fit=crop"
-                alt="Duzcelly y Álvaro"
+                alt="Duzcelly y Alvaro"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

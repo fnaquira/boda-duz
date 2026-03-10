@@ -38,20 +38,9 @@ export function Countdown() {
   return (
     <section
       id="countdown"
-      className="py-16 md:py-20 relative overflow-hidden"
+      className="py-16 md:py-20"
     >
-      {/* Fondo con imagen */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/img/fondo-1.jpeg')`,
-        }}
-      />
-      
-      {/* Overlay para mejorar legibilidad */}
-      <div className="absolute inset-0 bg-white-warm/88" />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Contenido principal */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

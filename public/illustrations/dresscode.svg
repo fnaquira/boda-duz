@@ -1,0 +1,15 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Elegant couple dress code -->
+  <circle cx="100" cy="80" r="15" fill="#B5A08A" fill-opacity="0.8"/>
+  <path d="M85 100 L80 180 L90 180 L95 140 L100 180 L110 180 L115 100 Z" fill="#B5A08A" fill-opacity="0.8"/>
+  <rect x="85" y="120" width="30" height="40" fill="#B5A08A" fill-opacity="0.6"/>
+  
+  <circle cx="200" cy="80" r="15" fill="#B5A08A" fill-opacity="0.8"/>
+  <path d="M180 100 L175 160 L185 160 L190 130 L195 160 L205 160 L200 100 Z" fill="#B5A08A" fill-opacity="0.8"/>
+  <path d="M175 120 Q200 110, 225 120 L220 160 L180 160 Z" fill="#B5A08A" fill-opacity="0.6"/>
+  
+  <!-- Dress details -->
+  <circle cx="200" cy="140" r="3" fill="#EAE6DA" fill-opacity="0.6"/>
+  <circle cx="190" cy="145" r="2" fill="#EAE6DA" fill-opacity="0.6"/>
+  <circle cx="210" cy="145" r="2" fill="#EAE6DA" fill-opacity="0.6"/>
+</svg>

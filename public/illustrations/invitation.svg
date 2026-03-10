@@ -1,0 +1,17 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Invitation card -->
+  <rect x="80" y="100" width="140" height="180" rx="5" fill="#B5A08A" fill-opacity="0.8"/>
+  <rect x="90" y="110" width="120" height="160" rx="3" fill="#EAE6DA" fill-opacity="0.9"/>
+  
+  <!-- Envelope flap -->
+  <path d="M90 110 L150 160 L210 110" fill="#B5A08A" fill-opacity="0.6"/>
+  
+  <!-- Hearts decoration -->
+  <path d="M120 140 C120 135, 125 135, 125 140 C125 135, 130 135, 130 140 Q125 150, 120 140 Z" fill="#B5A08A" fill-opacity="0.4"/>
+  <path d="M170 140 C170 135, 175 135, 175 140 C175 135, 180 135, 180 140 Q175 150, 170 140 Z" fill="#B5A08A" fill-opacity="0.4"/>
+  
+  <!-- Text lines -->
+  <line x1="100" y1="180" x2="200" y2="180" stroke="#B5A08A" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="200" x2="180" y2="200" stroke="#B5A08A" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="220" x2="190" y2="220" stroke="#B5A08A" stroke-width="2" opacity="0.6"/>
+</svg>
